@@ -17,26 +17,19 @@ create table theater(
 create table show(
 - primary key id for show
 - define title column (name)
-- define ticket price column
 
 create table performance(
 - define theater_id column
 - define date column
 - define show_id column
+- define performance_id column
+- define ticket_price column
 
-create table reservation(
+create table ticket(
+- ticket_id
+- foreign key performance_id
+- seat(varchar(10))
 - customer_id
-- show_id
-- seat_id
-
-create table seat(
-- seat_id
-- seat (Row/Column)
-- theater_id
-
-create table reservation_ticket(
-- show_id
-- quantity (tickets bought)
 
 customer table references
 theater (theater id)
