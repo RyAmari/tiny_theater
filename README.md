@@ -6,8 +6,7 @@ create table customer(
 - last name
 - phone number (can be null)
 - address (can be null)
-- seat (maybe assign seat id instead of seat directly through foreign key)
-- show(assign show_id from show table through foreign key)
+
 
 create table theater(
 - primary key id for theater
@@ -15,19 +14,38 @@ create table theater(
 - theater address/location column not null
 - theater email column not null
 - theater phone number not null
-- define seat column (seat may need to be its own table, unsure how to implement this though so maybe not)
 
 create table show(
 - primary key id for show
 - define title column (name)
-- define date column
 - define ticket price column
+
+create table performance(
+- define theater_id column
+- define date column
+- define show_id column
+
+create table reservation(
+- customer_id
+- show_id
+- seat_id
+
+
+create table seat(
+- seat_id
+- seat (Row/Column)
+- theater_id
+
+create table reservation_ticket(
+- show_id
+- quantity (tickets bought)
+
 
 
 customer table references
-theater (theater id)
-theater(seat_id)
-show (show_id)
+- theater (theater id)
+- theater(seat_id)
+- show (show_id)
 customer can see many shows
 customer can go to many theaters
 
