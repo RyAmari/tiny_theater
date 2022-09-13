@@ -71,6 +71,16 @@ where customer_id = 48;
 
 select * from customer;
 
+UPDATE customer SET `address` = NULL WHERE (`customer_id` = '1');
+UPDATE customer SET `address` = NULL WHERE (`customer_id` = '10');
+UPDATE customer SET `address` = NULL WHERE (`customer_id` = '14');
+UPDATE customer SET `address` = NULL WHERE (`customer_id` = '17');
+UPDATE customer SET `address` = NULL WHERE (`customer_id` = '28');
+UPDATE customer SET `address` = NULL WHERE (`customer_id` = '45');
+UPDATE customer SET `address` = NULL WHERE (`customer_id` = '46');
+UPDATE customer SET `address` = NULL WHERE (`customer_id` = '57');
+UPDATE customer SET `address` = NULL WHERE (`customer_id` = '60');
+
 set sql_safe_updates=0;
 delete from ticket
 where customer_id = 65;
@@ -83,3 +93,15 @@ set sql_safe_updates = 1;
 select * from ticket
 where theater_id = 1
 order by performance_id desc;
+
+delete from ticket 
+where customer_id=26 and performance_id=4;
+
+delete from ticket 
+where customer_id= 18 or customer_id= 19 or customer_id = 22 or customer_id = 25 and performance_id=3;
+
+delete from ticket 
+where customer_id= 7 or customer_id= 8 or customer_id = 10 or customer_id = 15 and performance_id=2;
+
+delete from ticket 
+where customer_id= 7 or customer_id= 8 or customer_id = 10 or customer_id = 15 and performance_id=1;
